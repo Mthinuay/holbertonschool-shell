@@ -1,4 +1,6 @@
 #!/bin/bash
 for dir in */; do
-  [ -d "$dir" ] && chmod a+x "$dir"
+  if [ -d "$dir" ]; then
+    chmod a+x "$dir"
+  fi
 done
