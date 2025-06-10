@@ -1,8 +1,4 @@
 #!/bin/bash
-for file in file1 file2 file3 file4 file5; do
-    if [ -e "$file" ]; then
-        if [ "$(stat -c '%U' "$file")" = "guillaume" ]; then
-            chown vincent "$file"
-        fi
-    fi
-done
+if [ "$(stat -c '%U' hello)" = "guillaume" ]; then
+    chown vincent hello
+fi
