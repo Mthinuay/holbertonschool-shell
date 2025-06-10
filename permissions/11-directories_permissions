@@ -1,4 +1,2 @@
 #!/bin/bash
-for entry in *; do
-  [ -d "$entry" ] && chmod a+x "$entry"
-done
+find . -mindepth 1 -maxdepth 1 -type d -exec chmod a+x {} \;
