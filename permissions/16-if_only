@@ -1,17 +1,2 @@
 #!/bin/bash
-
-files="file1 file2 file3 file4 file5"
-
-for f in $files; do
-  if [ -f "$f" ]; then
-    owner=$(stat -c '%U' "$f")
-    if [ "$owner" = "guillaume" ]; then
-      chown vincent "$f"
-      echo "Changed owner of $f from guillaume to vincent"
-    else
-      echo "No change for $f owned by $owner"
-    fi
-  else
-    echo "$f does not exist"
-  fi
-done
+[ -f hello ] && [ "$(stat -c %U hello)" = guillaume ] && chown vincent hello
