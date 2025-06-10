@@ -1,5 +1,5 @@
 #!/bin/bash
-for file in hello file2 file3; do
+for file in file1 file2 file3 file4 file5; do
     if [ -e "$file" ]; then
         if [ "$(stat -c '%U' "$file")" = "guillaume" ]; then
             chown vincent "$file"
